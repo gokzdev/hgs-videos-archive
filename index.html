@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a10">
+<title>HGS VIDEOS</title>
+<style>
+:root{--bg:#080a10;--panel:#111521;--panel2:#171d2b;--line:#2a3244;--text:#f5f7fc;--muted:#aab4c8;--blue:#8ab4ff;--gold:#e9c77b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -20%,#1c2b48 0,transparent 48%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}
+.hidden{display:none!important}
+.topbar{position:relative;width:100%;max-width:1650px;margin:0 auto;padding:0;display:block;line-height:0;overflow:hidden;background:#080a10;border-bottom:1px solid var(--line)}
+.header-art{display:block;width:100%;height:clamp(150px,28vw,310px);object-fit:cover;object-position:center 50%}
+.nav-btn{position:absolute;top:18px;right:clamp(16px,4vw,48px);line-height:1.4;background:#080a10a8;border:1px solid #ffffff40;border-radius:999px;color:#fff;padding:9px 17px;backdrop-filter:blur(8px)}
+.nav-btn:hover{background:#18233a}
+.page{min-height:calc(100vh - 85px)}
+.landing{min-height:calc(100vh - 85px);display:grid;place-items:center;padding:34px 22px 80px}
+.hero{width:min(100%,1000px);text-align:center;padding:clamp(35px,8vw,90px) 22px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(34,52,85,.78),rgba(10,13,21,.88)),radial-gradient(circle at 80% 10%,#2c3f61,transparent 35%);box-shadow:0 30px 100px #0005}
+.eyebrow{text-transform:uppercase;letter-spacing:.25em;font-size:.75rem;color:var(--blue);font-weight:800}
+.hero h1{font-size:clamp(3rem,10vw,7rem);letter-spacing:-.07em;line-height:.98;margin:18px 0}
+.hero .tagline{font-size:clamp(1.05rem,2.5vw,1.35rem);color:#d4dced;margin:0 auto 18px;max-width:700px}
+.about{max-width:670px;color:var(--muted);margin:0 auto 30px}
+.primary{background:var(--blue);color:#09101d;border:0;border-radius:999px;padding:14px 24px;font-weight:850;box-shadow:0 8px 30px #8ab4ff20}
+.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.secondary{background:#171d2b;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:700}
+.button-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.wrap{max-width:1160px;margin:auto;padding:24px 24px 70px}
+.page-title{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.05em;margin:8px 0}
+.sub{color:var(--muted);margin:0 0 28px}
+.season-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.season-card{position:relative;text-align:left;min-height:245px;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:25px;background:linear-gradient(130deg,#18233a,#10131d 70%);color:var(--text);transition:transform .2s,border-color .2s}
+.season-card:hover{transform:translateY(-4px);border-color:#6f8fc6}
+.season-card:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-60px;top:-75px;background:radial-gradient(circle,#8ab4ff35,transparent 68%)}
+.season-number{color:var(--blue);font-size:.78rem;font-weight:850;letter-spacing:.2em}
+.season-card h3{position:relative;font-size:2rem;margin:14px 0 6px;letter-spacing:-.04em}
+.season-card p{position:relative;color:var(--muted);max-width:420px;margin:0 0 24px}
+.card-link{position:relative;color:#e9eef9;font-weight:750}
+.detail-panel{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#151d2d,#0e1119)}
+.detail-banner{padding:clamp(28px,6vw,60px);background:radial-gradient(circle at 85% 10%,#31476b90,transparent 35%),linear-gradient(120deg,#17243a,#111521)}
+.detail-kicker{color:var(--blue);font-size:.8rem;letter-spacing:.2em;font-weight:850}
+.detail-banner h2{font-size:clamp(2.4rem,7vw,5rem);line-height:1;margin:12px 0;letter-spacing:-.06em}
+.detail-banner p{max-width:760px;color:#c4cde0;font-size:1.05rem}
+.detail-body{padding:clamp(24px,5vw,44px);display:grid;grid-template-columns:1.4fr .8fr;gap:30px}
+.detail-body h3{margin-top:0}
+.detail-body p,.detail-body li{color:var(--muted)}
+.meta-box{background:#0c1019;border:1px solid var(--line);border-radius:16px;padding:20px}
+.meta-box strong{display:block;margin-bottom:8px}
+.back{color:var(--muted);border:0;background:transparent;padding:8px 0;margin-bottom:12px}
+.back:hover{color:white}
+.footer{text-align:center;color:#7f8ba2;border-top:1px solid var(--line);padding:24px 15px;font-size:.88rem}
+.video-list{display:grid;gap:12px;margin-top:18px}
+.video-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px;border:1px solid var(--line);border-radius:14px;background:#0c1019}
+.video-item h4{margin:0 0 4px}
+.video-item p{margin:0;color:var(--muted);font-size:.9rem}
+.note-card{border:1px solid var(--line);background:#0c1019;border-radius:16px;padding:22px;margin-top:20px}
+.note-card h3{margin-top:0}
+.player-overlay{position:fixed;inset:0;background:#020308f5;z-index:20;display:none;align-items:center;justify-content:center;padding:18px}
+.player-overlay.open{display:flex}
+.player-shell{width:min(100%,1200px);background:#0b0e16;border:1px solid #333b4d;border-radius:16px;overflow:hidden;box-shadow:0 20px 90px #0009}
+.player-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px}
+.player-controls h3{font-size:.95rem;margin:0}
+.control-actions{display:flex;gap:8px}
+.control-btn{background:#202738;color:#f3f6ff;border:1px solid #39445b;border-radius:9px;padding:8px 12px}
+.video-frame{aspect-ratio:16/9;background:#000}
+.video-frame iframe{display:block;width:100%;height:100%;border:0}
+.player-note{font-size:.75rem;color:#8d99af;padding:0 14px 10px}
+@media(max-width:700px){
+.season-grid{grid-template-columns:1fr}
+.detail-body{grid-template-columns:1fr}
+.header-art{height:clamp(145px,42vw,230px)}
+.nav-btn{top:12px;right:12px;padding:7px 13px}
+.wrap{padding:18px 16px 50px}
+.hero{border-radius:20px}
+.player-overlay{padding:0}
+.player-shell{border-radius:0;width:100%}
+.video-frame{aspect-ratio:16/9}
+}
+.player-fallback{display:flex;justify-content:center;align-items:center;gap:.55rem;flex-wrap:wrap;padding:.7rem 1rem;color:#cbd5e1;font-size:.9rem;background:#0b1220}
+.player-fallback a{color:#93c5fd;font-weight:700;text-decoration:none}
+.player-fallback a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <img class="header-art" src="header.png" alt="HGS Videos cinematic logo">
+  <button class="nav-btn" id="homeNav">HOME</button>
+</header>
+
+<main>
+  <section id="landing" class="page landing">
+    <div class="hero">
+      <div class="eyebrow">The archive of our best days</div>
+      <h1>HGS VIDEOS</h1>
+      <p class="tagline">Four seasons. A thousand memories. One place to relive them.</p>
+      <p class="about">Welcome to HGS Videos — a collection of our funniest moments, unforgettable adventures, inside jokes, and memories with the people who made them special. Pick a season, read its story, and hit play when you're ready to go back.</p>
+      <div class="button-row"><button class="primary" id="experienceBtn">GO &amp; EXPERIENCE ↗</button></div>
+    </div>
+  </section>
+
+  <section id="seasonsPage" class="page hidden">
+    <div class="wrap">
+      <button class="back" id="backHome">← Back to home</button>
+      <div class="eyebrow">Choose your chapter</div>
+      <h2 class="page-title">The Seasons</h2>
+      <p class="sub">Every season has its own story. Pick one to discover what happened.</p>
+      <div class="season-grid" id="seasonGrid"></div>
+    </div>
+  </section>
+
+  <section id="detailPage" class="page hidden">
+    <div class="wrap">
+      <button class="back" id="backSeasons">← All seasons</button>
+      <article class="detail-panel" id="seasonDetail"></article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">HGS VIDEOS · Good friends. Crazy times. Forever memories.</footer>
+
+<div class="player-overlay" id="playerOverlay" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="player-shell" id="playerShell">
+    <div class="player-controls">
+      <h3 id="playerTitle">HGS VIDEOS</h3>
+      <div class="control-actions">
+        <button class="control-btn" id="fullscreenBtn">⛶ Full screen</button>
+        <button class="control-btn" id="minimizeBtn">Minimize ✕</button>
+      </div>
+    </div>
+    <div class="video-frame" id="videoFrame"></div>
+    <div class="player-note">Tip: use the video player's full-screen control, or press Esc to exit full screen.</div>
+  </div>
+</div>
+
+<script>
+// EDIT THIS SECTION with your season descriptions and video IDs.
+// YouTube ID example: https://www.youtube.com/watch?v=AbCdEf12345 -> AbCdEf12345
+// Unlisted videos are link-accessible, not truly private.
+const seasons = [
+ {number:1,title:"Season One",subtitle:"Where it all began",description:"The original HGS chapter. The videos were lost with an old phone, but the memories and stories are still here.",what:"This season is preserved as a written memory note because the original videos are no longer available. Manga jokes, pishti, and all those little inside jokes are part of the memories too. The moments still matter, even when the footage is gone.",mood:"Never forgotten",type:"note",noteTitle:"A note about Season One",note:"Season One is the beginning of the HGS story. The original videos were lost with the old phone, so this chapter cannot be watched here. But the memories are still with us — the manga jokes, pishti, the random teasing, the inside jokes, and all those little moments that made us laugh. The footage may be gone, but those stories still belong to us. This page keeps a place for that chapter in the archive — not every memory needs a video to matter."},
+ {number:2,title:"Season Two",subtitle:"HGS Park Edition",description:"One park. One gang. Countless memories! The HGS gang turns an ordinary day at the park into a memorable adventure.",what:"Join the HGS gang as they spend time together at the park, share laughs, enjoy random conversations, and create unforgettable friendship moments. It's not about where we go. It's about the memories we make together.",mood:"Outdoor fun · Friendship · Comedy",type:"videos",noteTitle:"HGS PARK EDITION",videos:[{title:"HGS Park Edition",description:"One park, one gang, and a day full of fun, random conversations, funny incidents, and friendship memories. Featuring: HGS Gang. Category: Friendship · Comedy · Outdoor Fun.",videoId:""}],playLabel:"Browse Season 2 videos"},
+ {number:3,title:"Season Three",subtitle:"Memories on another level",description:"Three different experiences, one HGS friendship — gaming, vlogging, and hilarious challenges.",what:"Season Three brings together gaming sessions, spontaneous trips, and comedy-filled challenges. Explore each HGS story below. Add the YouTube video ID to each entry when its video is ready to play.",mood:"Gaming · Vlogs · Comedy",type:"videos",videos:[{title:"Playing Games with Harish 🎮",description:"Two friends. One gaming session. Endless fun! Join Gokul and Harish as they play games like Stumble Guys, compete against each other, and create hilarious moments. Featuring: Gokul & Harish. Category: Gaming · Comedy · Friendship. Every game has a winner. Every session creates a memory. ❤️",videoId:""},{title:"HGS Vlogs 🎥",description:"Two friends. Random places. Unlimited memories! Join Gokul and Harish as they explore random places, travel together on their bike, and share everyday adventures through fun vlogs. Featuring: Gokul & Harish. Category: Vlogs · Travel · Friendship. No fixed destination. Just two friends making memories. ❤️",videoId:""},{title:"Truth or Dare with HGS 😂",description:"One game. Three friends. Unlimited comedy! Get ready for Gokul, Harish, and Sanjay in a hilarious game of Truth or Dare, filled with funny questions, crazy challenges, unexpected reactions, and unforgettable moments. Featuring: Gokul, Harish & Sanjay. Category: Comedy · Games · Friendship. Truths reveal secrets. Dares create chaos. HGS creates memories. ❤️",videoId:""}],playLabel:"Browse Season 3 videos"},
+ {number:4,title:"Season Four",subtitle:"Old places, new laughs",description:"Two videos, three friends, and another chapter of HGS memories.",what:"Season Four brings the gang back to familiar places and into a hilarious lungi lesson. Revisit the park from Season Two, then join Gokul and Sanjay as they teach Harish how to wear a lungi — with meme-worthy moments, laughter, playful dark humour, and a final sit-down conversation together.",mood:"Nostalgia & comedy",type:"videos",videos:[
+  {title:"Revisiting the Park 🌳",description:"Back to the park from Season Two! The gang returns to a familiar place, hangs out, and makes new memories with more fun and laughter. Same place, fresh chaos. ❤️",videoId:"_jNmdWmjBK0",videoUrl:"https://www.youtube.com/watch?v=_jNmdWmjBK0"},
+  {title:"Lungi Boys 😂",description:"Gokul and Sanjay try to teach Harish how to wear a lungi. What follows is a session full of funny meme moments, laughter, playful dark jokes, and plenty of HGS-style chaos. After the lungi lesson, all three sit together and have a little discussion to wrap things up. Featuring: Gokul, Harish & Sanjay. Category: Comedy · Friendship · Memes. One lungi lesson. Three friends. Unlimited chaos. ❤️",videoId:""}
+ ],playLabel:"Browse Season 4 videos"}
+];
+
+const landing=document.getElementById('landing');
+const seasonsPage=document.getElementById('seasonsPage');
+const detailPage=document.getElementById('detailPage');
+const seasonGrid=document.getElementById('seasonGrid');
+const seasonDetail=document.getElementById('seasonDetail');
+const overlay=document.getElementById('playerOverlay');
+const playerShell=document.getElementById('playerShell');
+const videoFrame=document.getElementById('videoFrame');
+let currentSeason=null;
+
+function showPage(which){
+  landing.classList.toggle('hidden',which!=='landing');
+  seasonsPage.classList.toggle('hidden',which!=='seasons');
+  detailPage.classList.toggle('hidden',which!=='detail');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderSeasons(){
+  seasonGrid.innerHTML='';
+  seasons.forEach(s=>{
+    const b=document.createElement('button');
+    b.className='season-card';
+    b.innerHTML=`<div class="season-number">HGS ARCHIVE · SEASON ${String(s.number).padStart(2,'0')}</div><h3>${s.title}</h3><p>${s.subtitle}</p><span class="card-link">Explore this season →</span>`;
+    b.addEventListener('click',()=>openSeason(s.number));
+    seasonGrid.appendChild(b);
+  });
+}
+
+function openSeason(number){
+  currentSeason=seasons.find(s=>s.number===number);
+  if(!currentSeason)return;
+  let content="";
+
+  if(currentSeason.type==="note"){
+    content=`<section class="note-card"><h3>${currentSeason.noteTitle}</h3><p>${currentSeason.note}</p></section>`;
+  }else{
+    const videos=currentSeason.videos||[];
+    content=`<h3>Videos in this season</h3><p>Choose a video to watch it in the player.</p>
+      <div class="video-list">${videos.length ? videos.map((v,i)=>`<div class="video-item"><div><h4>${v.title||`Video ${i+1}`}</h4><p>${v.description||"A memory from "+currentSeason.title}</p></div>${v.videoId ? `<button class="primary" data-video-index="${i}">▶ Watch</button>` : `<span class="card-link">Video link coming soon</span>`}</div>`).join("") : `<div class="note-card"><h3>Your video collection goes here</h3><p>Add your YouTube video IDs in the <code>videos</code> array for this season. You can add as many as you like.</p></div>`}</div>`;
+  }
+
+  seasonDetail.innerHTML=`
+    <div class="detail-banner"><div class="detail-kicker">HGS ARCHIVE · SEASON ${String(currentSeason.number).padStart(2,'0')}</div><h2>${currentSeason.title}</h2><p>${currentSeason.description}</p></div>
+    <div class="detail-body"><div><h3>About this season</h3><p>${currentSeason.what}</p>${content}</div><aside class="meta-box"><strong>Season details</strong><p><b>Season:</b> ${currentSeason.number}</p><p><b>Theme:</b> ${currentSeason.mood}</p><p><b>Collection:</b> HGS Videos</p><p style="font-size:.85rem">Season One is a written memory note. Seasons Two and Three support multiple videos.</p></aside></div>`;
+
+  seasonDetail.querySelectorAll("[data-video-index]").forEach(btn=>{
+    btn.addEventListener("click",()=>playSeasonVideo(currentSeason,Number(btn.dataset.videoIndex)));
+  });
+  showPage('detail');
+}
+
+function playSeasonVideo(s,index){
+  const video=s.videos?.[index];
+  if(!video||!video.videoId||video.videoId.startsWith("VIDEO_ID_")){
+    alert("This video has not been added yet.");
+    return;
+  }
+
+  const title=(video.title||s.title||"HGS VIDEOS");
+  const watchUrl=video.videoUrl||`https://www.youtube.com/watch?v=${encodeURIComponent(video.videoId)}`;
+  document.getElementById('playerTitle').textContent=title+' · HGS VIDEOS';
+
+  videoFrame.innerHTML=`<iframe id="videoIframe" src="https://www.youtube.com/embed/${encodeURIComponent(video.videoId)}?autoplay=1&rel=0&playsinline=1" title="${title.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div class="player-fallback"><span>Player not loading?</span> <a href="${watchUrl}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>`;
+  overlay.classList.add('open');
+}
+
+async function fullscreenPlayer(){
+  try{
+    if(document.fullscreenElement){
+      await document.exitFullscreen();
+      return;
+    }
+    if(playerShell.requestFullscreen){
+      await playerShell.requestFullscreen();
+    }else{
+      const iframe=document.getElementById('videoIframe');
+      if(iframe&&iframe.requestFullscreen)await iframe.requestFullscreen();
+    }
+  }catch(e){
+    alert('Use the YouTube player full-screen icon if your browser blocks website full-screen mode.');
+  }
+}
+
+function closePlayer(){
+  overlay.classList.remove('open');
+  videoFrame.innerHTML='';
+  if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+}
+
+document.getElementById('experienceBtn').addEventListener('click',()=>showPage('seasons'));
+document.getElementById('backHome').addEventListener('click',()=>showPage('landing'));
+document.getElementById('backSeasons').addEventListener('click',()=>showPage('seasons'));
+document.getElementById('homeNav').addEventListener('click',()=>{closePlayer();showPage('landing')});
+document.getElementById('minimizeBtn').addEventListener('click',closePlayer);
+document.getElementById('fullscreenBtn').addEventListener('click',fullscreenPlayer);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closePlayer()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open')&&!document.fullscreenElement)closePlayer()});
+
+renderSeasons();
+</script>
+</body>
+</html>
